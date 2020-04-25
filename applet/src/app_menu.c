@@ -60,6 +60,8 @@
 #include "amenu_codeplug.h" // codeplug-related displays, e.g. zone list, etc
 #include "amenu_set_tg.h" // helper to set a new talkgroup ad-hoc (and keep it!) 
 #include "amenu_hexmon.h" // hex-monitor to watch RAM-, internal Flash-, and SPI-flash contents 
+#include "amenu_contacts.h"
+#include "amenu_channels.h"
 
 #if( ! CONFIG_MORSE_OUTPUT )
 #  error "No 'app menu' without Morse output !" 
@@ -116,6 +118,7 @@ const am_stringtable_t am_stringtab_255Auto[];
 const am_stringtable_t am_stringtab_narrator_modes[];
 const am_stringtable_t am_stringtab_color_names[];
 
+
 //---------------------------------------------------------------------------
 // Alternative 'main' menu, opened with the RED 'BACK'-button :
 
@@ -127,7 +130,7 @@ const menu_item_t am_Main[] =
   { "Zone",             DTYPE_WSTRING, APPMENU_OPT_NONE,0, 
          zone_name,0,0,               NULL, am_cbk_ZoneList},
   { "Cont",             DTYPE_WSTRING, APPMENU_OPT_NONE,0, 
-         contact.name,0,0,          NULL,         NULL     },
+         contact.name,0,0,          NULL,         am_cbk_ContactsList     },
    // yet to be found out: Relation between 'contact.name', 'tx_id',
    // DMR-"talkgroup", -"reflector", current_channel_info, 
    // and how all this sticks together in the original firmware.
