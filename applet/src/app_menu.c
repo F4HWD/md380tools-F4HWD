@@ -118,6 +118,7 @@ const am_stringtable_t am_stringtab_255Auto[];
 const am_stringtable_t am_stringtab_narrator_modes[];
 const am_stringtable_t am_stringtab_color_names[];
 
+extern am_stringtable_t am_stringtab_contact_types[];
 
 //---------------------------------------------------------------------------
 // Alternative 'main' menu, opened with the RED 'BACK'-button :
@@ -137,6 +138,9 @@ const menu_item_t am_Main[] =
    // See (old) menu.c : create_menu_entry_set_tg_screen_store() .
   { "TkGrp",            DTYPE_INTEGER, APPMENU_OPT_EDITABLE,0, 
          NULL/*pvValue*/,0/*min*/,0x00FFFFFF/*max:24 bit*/, NULL,am_cbk_SetTalkgroup},
+  { "Type", DTYPE_UNS8, APPMENU_OPT_EDITABLE | APPMENU_OPT_BITMASK,
+	1, // <- here: bitmask !
+	&contact.type, 0, 1, am_stringtab_contact_types, am_cbk_SetCallType },
   { "[1]Test/Setup",       DTYPE_SUBMENU, APPMENU_OPT_NONE,0, 
    // |__ hotkey to get here quickly (press RED BUTTON followed by this key)
      (void*)am_Setup,0,0,           NULL,         NULL     },
