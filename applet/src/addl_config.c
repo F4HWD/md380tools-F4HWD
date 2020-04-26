@@ -129,7 +129,16 @@ void cfg_load()
 #else
     global_addl_config.netmon = 0 ;
 #endif
+
+if(tmp.length != sizeof(addl_config_t)){
+		global_addl_config.audio_leveling = 0;
+		return 0;
+	}
+
+	return 1;
 }
+
+
 
 void cfg_save()
 {
