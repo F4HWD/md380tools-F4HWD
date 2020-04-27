@@ -253,6 +253,7 @@ const menu_item_t am_Setup[] = // setup menu, nesting level 1 ...
   
   // { "Text__max__13", data_type,  options,opt_value,
   //    pvValue,iMinValue,iMaxValue,           string table, callback }
+#if defined(FW_S13_020)
   { "[5 APRS Beacon]Enabled", DTYPE_UNS8,
         APPMENU_OPT_EDITABLE|APPMENU_OPT_BITMASK,
             APRS_OFF|APRS_ENABLED, // <- here: bitmask !
@@ -260,7 +261,7 @@ const menu_item_t am_Setup[] = // setup menu, nesting level 1 ...
   { "Period/min",        DTYPE_UNS8, 
         APPMENU_OPT_EDITABLE|APPMENU_OPT_IMM_UPDATE|APPMENU_OPT_FACTOR,5, 
         &global_addl_config.aprs_period,5,60,      NULL,NULL },  
-
+#endif
   { "Setup:Back",       DTYPE_NONE, APPMENU_OPT_BACK,0,
         NULL,0,0,                  NULL,         NULL     },
 
