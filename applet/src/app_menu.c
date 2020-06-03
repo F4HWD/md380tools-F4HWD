@@ -61,6 +61,7 @@
 #include "amenu_codeplug.h" // codeplug-related displays, e.g. zone list, etc
 #include "amenu_set_tg.h" // helper to set a new talkgroup ad-hoc (and keep it!) 
 #include "amenu_hexmon.h" // hex-monitor to watch RAM-, internal Flash-, and SPI-flash contents 
+#include "amenu_ccsrch.h" // color code search for current freq and timeslot
 #include "amenu_contacts.h"
 #include "amenu_channels.h"
 
@@ -147,6 +148,8 @@ const menu_item_t am_Main[] =
   { "[1]Test/Setup",       DTYPE_SUBMENU, APPMENU_OPT_NONE,0, 
    // |__ hotkey to get here quickly (press RED BUTTON followed by this key)
      (void*)am_Setup,0,0,           NULL,         NULL     },
+  { "CC Scan", DTYPE_NONE, APPMENU_OPT_NONE, 0,
+	        NULL,0,0,                  NULL, am_cbk_CCSrch },
   { "Netmon",           DTYPE_NONE, APPMENU_OPT_NONE,0, 
          NULL,0,0,                  NULL,     am_cbk_NetMon},
   { "Exit",             DTYPE_NONE, APPMENU_OPT_BACK,0,

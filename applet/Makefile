@@ -63,6 +63,7 @@ SRCS += color_picker.o
 SRCS += amenu_hexmon.o
 SRCS += amenu_utils.o
 SRCS += amenu_set_tg.o
+SRCS += amenu_ccsrch.o
 SRCS += amenu_channels.o
 SRCS += amenu_codeplug.o
 SRCS += amenu_contacts.o
