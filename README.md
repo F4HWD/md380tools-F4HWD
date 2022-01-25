@@ -2,6 +2,9 @@
 
 by Travis Goodspeed, KK4VCZ
 
+This software is modified by Max F4HWD, inspired by the old alternative firmware
+of KG5RKI : https://github.com/KG5RKI/TyMD380Tools/tree/master/TyMD380tools
+
 The Tytera MD-380 is handheld radio transceiver for DMR and FM.  In
 2015, this project began patching that firmware by replacing the byte
 of the Chinese font with our own code, fixing bugs in the original
